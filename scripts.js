@@ -836,6 +836,9 @@ $(document).ready(function() {
 
   // Initialize game card hover effects
   initGameCardHover();
+  
+  // Initialize unicorn mode
+  initUnicornMode();
 });
 
 // Music player controls
@@ -852,4 +855,128 @@ function initGamePreview() {
   // ...
 }
 */
+// ... existing code ...
+
+// Initialize unicorn mode
+function initUnicornMode() {
+  const unicornToggle = document.getElementById('unicorn-mode-toggle');
+  const floatingUnicorn = document.getElementById('floating-unicorn');
+  const body = document.body;
+  const cursorTrails = [];
+  let unicornMode = false;
+  let lastX = 0;
+  let lastY = 0;
+  
+  // Toggle unicorn mode when the button is clicked
+  if (unicornToggle) {
+    unicornToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      unicornMode = !unicornMode;
+      
+      if (unicornMode) {
+        // Enable unicorn mode
+        body.classList.add('unicorn-mode');
+        floatingUnicorn.classList.add('unicorn-visible');
+        
+        // Play unicorn sound
+        const unicornSound = new Audio('https://web.archive.org/web/20091021130716/http://geocities.com/EnchantedForest/Meadow/8812/horse.wav');
+        unicornSound.volume = 0.3;
+        unicornSound.play();
+        
+        // Add rainbow trail effect
+        document.addEventListener('mousemove', createUnicornTrail);
+        
+        // Announce unicorn mode
+        const announcement = document.createElement('div');
+        announcement.className = 'falling-element';
+        announcement.innerText = '✨ UNICORN MODE ACTIVATED! ✨';
+        announcement.style.color = '#ff00ff';
+        announcement.style.fontWeight = 'bold';
+        announcement.style.fontSize = '24px';
+        document.body.appendChild(announcement);
+        
+        // Change all headers to rainbow text
+        const headers = document.querySelectorAll('h1, h2, h3');
+        headers.forEach(header => {
+          if (!header.classList.contains('rainbow-text')) {
+            header.classList.add('rainbow-text');
+          }
+        });
+        
+        // Update button text
+        unicornToggle.innerHTML = 'NORMAL MODE <img src="geo-bootstrap/img/test/hot.gif">';
+      } else {
+        // Disable unicorn mode
+        body.classList.remove('unicorn-mode');
+        floatingUnicorn.classList.remove('unicorn-visible');
+        
+        // Remove rainbow trail effect
+        document.removeEventListener('mousemove', createUnicornTrail);
+        
+        // Remove all unicorn cursor trails
+        cursorTrails.forEach(trail => {
+          if (trail && trail.parentNode) {
+            trail.parentNode.removeChild(trail);
+          }
+        });
+        cursorTrails.length = 0;
+        
+        // Update button text
+        unicornToggle.innerHTML = 'UNICORN MODE <img src="geo-bootstrap/img/test/new2.gif">';
+      }
+    });
+  }
+  
+  // Create unicorn cursor trail
+  function createUnicornTrail(e) {
+    // Only create a trail every 100ms to avoid overloading the DOM
+    if (Date.now() - lastTrailTime < 100) return;
+    lastTrailTime = Date.now();
+    
+    const trail = document.createElement('div');
+    trail.className = 'unicorn-cursor-trail';
+    trail.style.left = e.clientX - 15 + 'px';
+    trail.style.top = e.clientY - 15 + 'px';
+    document.body.appendChild(trail);
+    
+    // Add to array to keep track
+    cursorTrails.push(trail);
+    
+    // Animate and remove after animation completes
+    setTimeout(() => {
+      trail.style.opacity = '0';
+      setTimeout(() => {
+        if (trail && trail.parentNode) {
+          trail.parentNode.removeChild(trail);
+          const index = cursorTrails.indexOf(trail);
+          if (index > -1) {
+            cursorTrails.splice(index, 1);
+          }
+        }
+      }, 500);
+    }, 1000);
+  }
+  
+  let lastTrailTime = 0;
+  
+  // Create rainbow trail effect
+  function createRainbowTrail(e) {
+    const trail = document.createElement('div');
+    trail.className = 'rainbow-trail';
+    trail.style.top = e.clientY + 'px';
+    trail.style.opacity = '1';
+    document.body.appendChild(trail);
+    
+    setTimeout(() => {
+      trail.style.opacity = '0';
+      setTimeout(() => {
+        if (trail.parentNode) {
+          trail.parentNode.removeChild(trail);
+        }
+      }, 200);
+    }, 100);
+  }
+}
+
 // ... existing code ... 

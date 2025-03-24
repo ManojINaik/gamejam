@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /geo-bootstrap/bootstrap/
+Disallow: /geo-bootstrap/.git/
+
+Sitemap: https://vibejam2025.example.com/sitemap.xml 

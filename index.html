@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>!!~~##VIBEJAM 2025 EXTREME EDITION~~!!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ULTRA RADICAL Showcase site for 2025 Vibe Coding Game Jam games">
+    <meta name="author" content="#VIBEJAM 2025">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link href="geo-bootstrap/swatch/bootstrap.min.css" rel="stylesheet">
+    <link href="geo-bootstrap/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+      /* Audio player styling */
+      .midi-player {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 9999;
+        background: linear-gradient(45deg, #ff00ff, #00ffff);
+        padding: 5px;
+        border: 3px dashed yellow;
+        border-radius: 10px;
+      }
+      
+      /* Mouse trail styling */
+      .cursor-trail {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-image: url('geo-bootstrap/img/flames.gif');
+        pointer-events: none;
+        z-index: 10000;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+
+  <body id="top" class="preview crazy-mode" data-spy="scroll" data-target=".subnav" data-offset="80">
+  
+  <!-- Cursor trails container -->
+  <div id="cursor-container"></div>
+
+  <!-- Background music -->
+  <div class="midi-player">
+    <marquee><blink>!!EXTREME VIBES!!</blink></marquee>
+    <audio id="background-music" autoplay loop>
+      <source src="https://vgmsite.com/soundtracks/pokemon-gameboy-sound-collection/jucncspp/101-opening.mp3" type="audio/mpeg">
+    </audio>
+    <button id="toggle-music" class="btn btn-danger btn-mini"><blink>♫ TOGGLE SOUND ♫</blink></button>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar navbar-fixed-top">
+   <div class="navbar-inner">
+     <div class="container">
+       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+         <span class="icon-bar"></span>
+       </a>
+       <a class="brand" href="#"><span class="rainbow-text">#VIBEJAM 2025</span></a>
+       <div class="nav-collapse" id="main-menu">
+        <ul class="nav" id="main-menu-left">
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#games">G@M3Z</a></li>
+          <li><a href="#rules">RUL3Z</a></li>
+          <li><a href="#prizes">PR1Z3$</a></li>
+          <li><a href="#submit">SUBM1T!!1!</a></li>
+        </ul>
+        <ul class="nav pull-right" id="main-menu-right">
+          <li><a rel="tooltip" target="_blank" href="https://twitter.com/search?q=%23vibejam" title="Follow on Twitter">#vibejam <i class="icon-share-alt"></i></a></li>
+        </ul>
+       </div>
+     </div>
+   </div>
+  </div>
+
+  <!-- Floating elements -->
+  <div class="floating-gifs">
+    <img src="geo-bootstrap/img/test/mchammer.gif" class="floating-gif hammer">
+    <img src="geo-bootstrap/img/test/drudgesiren.gif" class="floating-gif siren">
+    <img src="geo-bootstrap/img/test/spinningearth.gif" class="floating-gif earth">
+    <img src="geo-bootstrap/img/test/hot.gif" class="floating-gif hot-thing">
+  </div>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header class="jumbotron subhead" id="overview">
+      <div class="hero-container">
+        <!-- Title with improved effects -->
+        <div class="glitch-mega-container">
+          <div class="neon-glow-container">
+            <div class="glitch mega-title" data-text="#VIBEJAM 2025">
+              <h1 class="epic-title">
+                <FONT COLOR="#FF0000">V</FONT><FONT COLOR="#FF5A00">I</FONT><FONT COLOR="#FFB400">B</FONT><FONT COLOR="#FFff00">E</FONT><FONT COLOR="#A5ff00">J</FONT><FONT COLOR="#4Bff00">A</FONT><FONT COLOR="#00ff00">M</FONT> 
+                <blink><FONT COLOR="#00ffB4">2</FONT><FONT COLOR="#00ffff">0</FONT><FONT COLOR="#00B4ff">2</FONT><FONT COLOR="#005Aff">5</FONT></blink>
+              </h1>
+            </div>
+          </div>
+          
+          <!-- Animated flames border -->
+          <div class="flames-container">
+            <div class="fire-border top"></div>
+            <div class="fire-border bottom"></div>
+          </div>
+        </div>
+        
+        <!-- Main content with improved layout -->
+        <div class="hero-content">
+          <!-- Main headline with starburst effect -->
+          <div class="hero-headline-container">
+            <div class="hero-headline">
+              <h2 class="lead starburst-text">THE MOST EXTREME AI-POWERED GAME JAM OF ALL TIME!!!!11!!</h2>
+            </div>
+          </div>
+          
+          <!-- Key details in info boxes -->
+          <div class="hero-info">
+            <div class="info-box deadline-box">
+              <div class="info-icon">⏰</div>
+              <div class="info-content">
+                <span class="info-label">DEADLINE</span>
+                <span class="info-value blink-rainbow">APRIL 1, 2025</span>
+              </div>
+            </div>
+            
+            <div class="info-box prize-box">
+              <div class="info-icon">💰</div>
+              <div class="info-content">
+                <span class="info-label">PRIZE</span>
+                <span class="info-value glow-text">$5,000</span>
+              </div>
+            </div>
+            
+            <div class="info-box host-box">
+              <div class="info-icon">🏆</div>
+              <div class="info-content">
+                <span class="info-label">HOSTED BY</span>
+                <span class="info-value rainbow-text">@LEVELSIO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bottom animated requirements bar -->
+        <div class="hero-requirements">
+          <div class="marquee-border">
+            <marquee scrollamount="6" class="requirements-marquee">
+              <span class="req-item"><img src="geo-bootstrap/img/test/hot.gif" class="req-icon">80% AI-WRITTEN CODE</span>
+              <span class="req-item"><img src="geo-bootstrap/img/test/hot.gif" class="req-icon">WEB-BASED & INSTANT</span>
+              <span class="req-item"><img src="geo-bootstrap/img/test/hot.gif" class="req-icon">FREE TO PLAY</span>
+              <span class="req-item"><img src="geo-bootstrap/img/test/hot.gif" class="req-icon">NO LOGIN REQUIRED</span>
+            </marquee>
+          </div>
+        </div>
+        
+        <!-- Navigation tabs -->
+        <div class="hero-nav">
+          <ul class="nav nav-pills tab-nav">
+            <li><a href="#about" class="glow-button">About</a></li>
+            <li><a href="#games" class="glow-button">Games</a></li>
+            <li><a href="#rules" class="glow-button">Rules</a></li>
+            <li><a href="#prizes" class="glow-button">Prizes</a></li>
+            <li><a href="#submit" class="glow-button">Submit</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="page-header">
+        <h1 class="distort-text"><img src="geo-bootstrap/img/test/spinningearth.gif"> <span class="text-wobble">About #VIBEJAM</span> <img src="geo-bootstrap/img/test/spinningearth.gif"></h1>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div class="well neon-well">
+            <p class="shake-text"><img src="geo-bootstrap/img/test/new2.gif"> The 2025 Vibe Coding Game Jam, or #vibejam, is a <span class="highlight-text">MIND-BENDING</span> competition where developers build games using AI tools, emphasizing a "vibe coding" approach. Hosted by @levelsio, this event encourages <span class="rainbow-text">RADICAL INNOVATION</span> in game development, particularly for web-based platforms.</p>
+            
+            <div class="text-center">
+              <img src="geo-bootstrap/img/test/counter2.gif">
+              <img src="geo-bootstrap/img/test/funky.gif">
+              <img src="geo-bootstrap/img/test/counter2.gif">
+            </div>
+            
+            <p class="crazy-text">Participants are tasked with creating games where at least 80% of the code is generated by AI, accessible without login, and free-to-play, preferably on their own domain. Multiplayer is optional but encouraged. The games should avoid loading screens and heavy downloads, ensuring <span class="blink-fast">INSTANT GRATIFICATION!!!</span></p>
+            
+            <img src="geo-bootstrap/img/test/divider.gif" style="width:100%">
+            
+            <div class="text-center">
+              <blink><h2 class="rainbow-text">$$$ BIG MONEY PRIZES $$$</h2></blink>
+            </div>
+            
+            <p class="crazy-text">The competition offers a <span class="blink-rainbow">$5,000 PRIZE</span> for the best game, with judging by a panel including @karpathy, @timsoret, @mrdoob, @s13k_, and @levelsio. Sponsors include @boltdotnew and @coderabbitai.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games">
+      <div class="page-header">
+        <h1><span class="rainbow-text">G@M3Z</span> <small>Check out these MIND-BLOWING submissions!</small></h1>
+      </div>
+      
+      <marquee scrollamount="5" direction="left" class="uber-marquee">
+        <span class="blink-fast">★★★</span> <span class="rainbow-text">SUBMITTED GAMES FROM SUPER AWESOME DEVELOPERS!</span> <span class="blink-fast">★★★</span>
+      </marquee>
+      
+      <div class="row">
+        <!-- SUBMITTED GAME CARDS -->
+        <div class="span4">
+          <div class="game-card magic-card">
+            <div class="well game-well">
+              <h2 class="game-title rainbow-text">Crab Cards</h2>
+              <div class="game-thumbnail explode-on-hover">
+                <img src="images/game1.jpg" alt="Crab Cards Game">
+                <div class="game-overlay">
+                  <img src="geo-bootstrap/img/test/hot.gif" class="overlay-gif">
+                </div>
+              </div>
+              <p class="game-description">A card game with crabs that has beautiful AI-generated pixel art. Build your deck and battle opponents!</p>
+              <p class="text-center">
+                <a href="https://x.com/LBacaj/status/1903114707336048851" target="_blank" class="btn btn-primary wiggle-button">
+                  <img src="geo-bootstrap/img/test/computer.gif" class="btn-icon"> Play Now!
+                </a>
+              </p>
+              <div class="text-center">
+                <span class="highlight-text">By: @LBacaj</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="span4">
+          <div class="game-card magic-card">
+            <div class="well game-well">
+              <h2 class="game-title rainbow-text">Hedgehog Runner</h2>
+              <div class="game-thumbnail explode-on-hover">
+                <img src="images/game2.jpg" alt="Hedgehog Runner Game">
+                <div class="game-overlay">
+                  <img src="geo-bootstrap/img/test/hot.gif" class="overlay-gif">
+                </div>
+              </div>
+              <p class="game-description">An endless runner where you play as a hedgehog collecting rings and avoiding obstacles. SONIC WHO???</p>
+              <p class="text-center">
+                <a href="https://x.com/hedgeday/status/1903891340402000377" target="_blank" class="btn btn-primary wiggle-button">
+                  <img src="geo-bootstrap/img/test/computer.gif" class="btn-icon"> Play Now!
+                </a>
+              </p>
+              <div class="text-center">
+                <span class="highlight-text">By: @hedgeday</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="span4">
+          <div class="game-card magic-card">
+            <div class="well game-well">
+              <h2 class="game-title rainbow-text">Alien Invasion</h2>
+              <div class="game-thumbnail explode-on-hover">
+                <img src="images/game3.jpg" alt="Alien Invasion Game">
+                <div class="game-overlay">
+                  <img src="geo-bootstrap/img/test/hot.gif" class="overlay-gif">
+                </div>
+              </div>
+              <p class="game-description">Defend Earth from waves of alien invaders in this retro-styled space shooter with amazing VFX!</p>
+              <p class="text-center">
+                <a href="https://x.com/DevAlien/status/1903461187842392313" target="_blank" class="btn btn-primary wiggle-button">
+                  <img src="geo-bootstrap/img/test/computer.gif" class="btn-icon"> Play Now!
+                </a>
+              </p>
+              <div class="text-center">
+                <span class="highlight-text">By: @DevAlien</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="span4">
+          <div class="game-card magic-card">
+            <div class="well game-well">
+              <h2 class="game-title rainbow-text">Slavic Quest</h2>
+              <div class="game-thumbnail explode-on-hover">
+                <img src="images/game1.jpg" alt="Slavic Quest Game">
+                <div class="game-overlay">
+                  <img src="geo-bootstrap/img/test/hot.gif" class="overlay-gif">
+                </div>
+              </div>
+              <p class="game-description">An epic RPG adventure based on Slavic mythology. Explore magical forests and battle legendary creatures!</p>
+              <p class="text-center">
+                <a href="https://x.com/SeloSlav/status/1904101951471526375" target="_blank" class="btn btn-primary wiggle-button">
+                  <img src="geo-bootstrap/img/test/computer.gif" class="btn-icon"> Play Now!
+                </a>
+              </p>
+              <div class="text-center">
+                <span class="highlight-text">By: @SeloSlav</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="span4">
+          <div class="game-card magic-card">
+            <div class="well game-well">
+              <h2 class="game-title rainbow-text">Phaethon's Run</h2>
+              <div class="game-thumbnail explode-on-hover">
+                <img src="images/game2.jpg" alt="Phaethon's Run Game">
+                <div class="game-overlay">
+                  <img src="geo-bootstrap/img/test/hot.gif" class="overlay-gif">
+                </div>
+              </div>
+              <p class="game-description">Guide Phaethon as he drives the chariot of the sun across the sky in this Greek mythology-inspired platformer!</p>
+              <p class="text-center">
+                <a href="https://x.com/ronphaestas/status/1903555252894544032" target="_blank" class="btn btn-primary wiggle-button">
+                  <img src="geo-bootstrap/img/test/computer.gif" class="btn-icon"> Play Now!
+                </a>
+              </p>
+              <div class="text-center">
+                <span class="highlight-text">By: @ronphaestas</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="span4">
+          <div class="game-card magic-card">
+            <div class="well game-well">
+              <h2 class="game-title blink-rainbow">YOUR GAME HERE!</h2>
+              <div class="game-thumbnail explode-on-hover" style="display: flex; justify-content: center; align-items: center; background: url('geo-bootstrap/img/test/construction.gif');">
+                <img src="geo-bootstrap/img/test/new.gif" alt="Submit Your Game" style="width: 50%; height: auto;">
+              </div>
+              <p class="game-description">Ready to join these AWESOME developers? Submit your game and be featured right here!</p>
+              <p class="text-center">
+                <a href="#submit" class="btn btn-ultra wiggle-button">
+                  <img src="geo-bootstrap/img/test/hot.gif" class="btn-icon"> SUBMIT NOW!
+                </a>
+              </p>
+              <div class="text-center">
+                <span class="highlight-text blink-fast">DEADLINE SOON!</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules">
+      <div class="page-header">
+        <h1 class="distort-text"><img src="geo-bootstrap/img/test/computer.gif"> <span class="rainbow-text">ULTRA RULES</span> & <span class="rainbow-text">REQUIREMENTS</span> <img src="geo-bootstrap/img/test/computer.gif"></h1>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <div class="well neon-well">
+            <marquee scrollamount="3" direction="right">
+              <span class="rainbow-text">★☆★ FOLLOW THESE COSMIC GUIDELINES TO WIN $5,000 ★☆★</span>
+            </marquee>
+            
+            <table class="table table-bordered table-striped crazy-table">
+              <thead>
+                <tr class="rainbow-row">
+                  <th><blink>RULE CATEGORY</blink></th>
+                  <th><blink>DETAILS</blink></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="highlight-row">
+                  <td class="wiggle-cell"><img src="geo-bootstrap/img/test/new.gif"> <span class="rainbow-text">AI Code Requirement</span></td>
+                  <td>At least <span class="blink-fast">80%</span> of the code must be written by AI, reflecting the <span class="highlight-text">RADICAL VIBE CODING ETHOS</span>.</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td class="wiggle-cell"><img src="geo-bootstrap/img/test/computer.gif"> <span class="rainbow-text">Accessibility</span></td>
+                  <td>Game must be <span class="shake-text">WEB-BASED</span>, accessible without login or signup, and <span class="blink-rainbow">FREE-TO-PLAY</span>, preferably on own domain/subdomain.</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td class="wiggle-cell"><img src="geo-bootstrap/img/test/wabwalk.gif"> <span class="rainbow-text">Multiplayer Status</span></td>
+                  <td>Can be single player or multiplayer; multiplayer is <span class="flip-text">HIGHLY ENCOURAGED</span> but not required.</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td class="wiggle-cell"><img src="geo-bootstrap/img/test/hot.gif"> <span class="rainbow-text">Loading and Performance</span></td>
+                  <td><span class="blink-fast">NO LOADING SCREENS</span> or heavy downloads; must be <span class="highlight-text">ALMOST INSTANTLY PLAYABLE</span>, except for optional username prompts.</td>
+                </tr>
+                <tr class="highlight-row">
+                  <td class="wiggle-cell"><img src="geo-bootstrap/img/test/hacker.gif"> <span class="rainbow-text">Engine Flexibility</span></td>
+                  <td>Can use <span class="rainbow-text">ANY ENGINE</span>, with ThreeJS recommended for its <span class="highlight-text">COSMIC WEB COMPATIBILITY</span>.</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <div class="text-center">
+              <img src="geo-bootstrap/img/test/divider2.gif" style="width:100%">
+            </div>
+            
+            <marquee scrollamount="3" direction="left">
+              <span class="rainbow-text">★☆★ BREAK THE RULES AND FACE THE WRATH OF THE VIBE GODS ★☆★</span>
+            </marquee>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prizes Section -->
+    <section id="prizes">
+      <div class="page-header">
+        <h1 class="epic-rainbow"><img src="geo-bootstrap/img/test/hot.gif"> <span class="glitch" data-text="EPIC PRIZES">EPIC PRIZES</span> & <span class="glitch" data-text="JUDGING">JUDGING</span> <img src="geo-bootstrap/img/test/hot.gif"></h1>
+      </div>
+      
+      <div class="text-center">
+        <img src="geo-bootstrap/img/test/divider1.gif" style="width:100%; max-height:50px;">
+      </div>
+      
+      <div class="row">
+        <div class="span6">
+          <div class="well neon-well money-bg">
+            <h3 class="prize-header"><blink>💰💰💰 $5,000 PRIZE 💰💰💰</blink></h3>
+            
+            <div class="text-center">
+              <img src="geo-bootstrap/img/test/hot.gif">
+              <img src="geo-bootstrap/img/test/hot.gif">
+              <img src="geo-bootstrap/img/test/hot.gif">
+            </div>
+            
+            <p class="crazy-text">The competition offers a <span class="blink-rainbow">LIFE-CHANGING</span> incentive with a <span class="highlight-text">$5,000 CASH MONEY PRIZE</span> for the best game, as announced by @levelsio.</p>
+            
+            <img src="geo-bootstrap/img/test/divider2.gif" style="width:100%">
+            
+            <h4 class="rainbow-text text-center">★ LEGENDARY SPONSORS ★</h4>
+            <ul class="sponsor-list">
+              <li><img src="geo-bootstrap/img/test/hot.gif"> <span class="rainbow-text">@boltdotnew</span></li>
+              <li><img src="geo-bootstrap/img/test/hot.gif"> <span class="rainbow-text">@coderabbitai</span></li>
+            </ul>
+            
+            <div class="marquee-box">
+              <marquee behavior="alternate" scrollamount="10">
+                <span class="rainbow-text">★★★ WIN BIG OR GO HOME ★★★</span>
+              </marquee>
+            </div>
+          </div>
+        </div>
+        
+        <div class="span6">
+          <div class="well neon-well judges-bg">
+            <h3 class="judge-header text-center"><span class="glitch" data-text="CELEBRITY JUDGES">CELEBRITY JUDGES</span></h3>
+            
+            <div class="text-center judge-icons">
+              <img src="geo-bootstrap/img/test/spinningearth.gif">
+              <img src="geo-bootstrap/img/test/counter2.gif">
+              <img src="geo-bootstrap/img/test/spinningearth.gif">
+            </div>
+            
+            <p class="crazy-text">Your games will be evaluated by these <span class="blink-rainbow">INDUSTRY LEGENDS</span>:</p>
+            
+            <ul class="judge-list">
+              <li class="judge-item"><img src="geo-bootstrap/img/test/new.gif"> <span class="rainbow-text">@karpathy</span> - <span class="highlight-text">AI MASTERMIND</span></li>
+              <li class="judge-item"><img src="geo-bootstrap/img/test/new.gif"> <span class="rainbow-text">@timsoret</span> - <span class="highlight-text">PIXEL WIZARD</span></li>
+              <li class="judge-item"><img src="geo-bootstrap/img/test/new.gif"> <span class="rainbow-text">@mrdoob</span> - <span class="highlight-text">THREE.JS OVERLORD</span></li>
+              <li class="judge-item"><img src="geo-bootstrap/img/test/new.gif"> <span class="rainbow-text">@s13k_</span> - <span class="highlight-text">CODE SORCERER</span></li>
+              <li class="judge-item"><img src="geo-bootstrap/img/test/new.gif"> <span class="rainbow-text">@levelsio</span> - <span class="highlight-text">VIBE KING</span></li>
+            </ul>
+            
+            <div class="marquee-box">
+              <marquee behavior="alternate" scrollamount="10">
+                <span class="rainbow-text">★★★ IMPRESS THE JUDGES, CHANGE YOUR LIFE ★★★</span>
+              </marquee>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Submit Section -->
+    <section id="submit">
+      <div class="page-header">
+        <h1 class="epic-rainbow"><img src="geo-bootstrap/img/test/emailme.gif"> <span class="glitch" data-text="SUBMIT YOUR CREATION">SUBMIT YOUR CREATION</span> <img src="geo-bootstrap/img/test/emailme.gif"></h1>
+      </div>
+      
+      <div class="row">
+        <div class="span12">
+          <div class="well neon-well submit-bg">
+            <div class="text-center">
+              <img src="geo-bootstrap/img/test/hot.gif">
+              <img src="geo-bootstrap/img/test/construction.gif">
+              <img src="geo-bootstrap/img/test/hot.gif">
+            </div>
+            
+            <p class="crazy-text text-center">Ready to submit your <span class="blink-rainbow">MIND-BLOWING</span> game to #VIBEJAM? Follow these <span class="highlight-text">COSMIC STEPS</span>:</p>
+            
+            <ol class="submission-steps">
+              <li class="step-item"><span class="highlight-text">UNLEASH</span> your game development <span class="rainbow-text">CREATIVITY</span></li>
+              <li class="step-item"><span class="highlight-text">DEPLOY</span> it on your preferred web platform for <span class="rainbow-text">MAXIMUM EXPOSURE</span></li>
+              <li class="step-item"><span class="highlight-text">COMPLETE</span> the <a href="https://docs.google.com/forms/d/e/1FAIpQLSdB8LEZIoYuh4_tO89s2DbMT7nqyDvJGrgrrUoBquLA4XCBRA/viewform" target="_blank" class="rainbow-text">2025 Vibe Coding Game Jam Submission Form</a></li>
+              <li class="step-item"><span class="highlight-text">PROCLAIM</span> your progress on Twitter using <span class="rainbow-text">#vibejam</span></li>
+            </ol>
+            
+            <div class="text-center">
+              <img src="geo-bootstrap/img/test/divider.gif" style="width:100%">
+            </div>
+            
+            <div class="portal-info">
+              <h4 class="text-center rainbow-text"><blink>★★★ ENTER THE METAVERSE ★★★</blink></h4>
+              <p class="crazy-text text-center">Remember to include <span class="highlight-text">EXIT PORTALS</span> in your game that redirect to <span class="rainbow-text">http://portal.pieter.com</span> to join the <span class="blink-rainbow">INTERCONNECTED MULTIVERSE OF MADNESS!</span></p>
+            </div>
+            
+            <div class="text-center submission-button">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSdB8LEZIoYuh4_tO89s2DbMT7nqyDvJGrgrrUoBquLA4XCBRA/viewform" target="_blank" class="btn btn-large btn-success btn-ultra wiggle-button">
+                <img src="geo-bootstrap/img/test/new.gif" class="btn-icon"> 
+                <span class="blink-fast">SUBMIT YOUR MASTERPIECE NOW!</span>
+                <img src="geo-bootstrap/img/test/new.gif" class="btn-icon">
+              </a>
+            </div>
+            
+            <div class="text-center">
+              <img src="geo-bootstrap/img/test/divider4.gif" style="width:100%; max-height:50px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ultra Special Secret Section - Unlocked with Konami Code -->
+    <div id="secret-section" class="hidden-section">
+      <div class="secret-content">
+        <h2 class="rainbow-text text-center"><blink>★★★ SECRET DEVELOPER ZONE ★★★</blink></h2>
+        <p class="crazy-text">You've discovered the <span class="highlight-text">ULTRA SECRET</span> developer zone! Here are some <span class="rainbow-text">EXCLUSIVE TIPS</span> to help you win:</p>
+        <ul class="secret-tips">
+          <li>Use <span class="highlight-text">ChatGPT-4</span> for most of your code generation</li>
+          <li>Focus on <span class="rainbow-text">GAMEPLAY</span> over graphics</li>
+          <li>Make sure your game has a <span class="highlight-text">UNIQUE VIBE</span></li>
+          <li>Test on <span class="rainbow-text">MULTIPLE BROWSERS</span></li>
+          <li>Keep file sizes <span class="highlight-text">SMALL</span> for faster loading</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer crazy-footer">
+      <div class="row">
+        <div class="span12">
+          <div class="text-center visitor-counter-container">
+            <div class="visitor-count-label">
+              <img src="geo-bootstrap/img/test/counter.gif" alt="Counter">
+              <span class="blink-fast">VISITORS:</span>
+              <img src="geo-bootstrap/img/test/counter.gif" alt="Counter">
+            </div>
+            <div class="visitor-count-digits">
+              <span id="visitor-count" class="rainbow-text">12345</span>
+            </div>
+            <div class="visitor-count-message">
+              <marquee scrollamount="3">YOU ARE VISITOR NUMBER <span class="blink-rainbow">#<span id="visitor-count-marquee"></span></span> - CONGRATULATIONS!!!</marquee>
+            </div>
+          </div>
+          
+          <p class="pull-right shake-text"><a href="#top" class="rainbow-text">↑↑↑ BACK TO TOP ↑↑↑</a></p>
+          <p class="crazy-text">Created for the <span class="rainbow-text">2025 Vibe Coding Game Jam</span>. <span class="blink-fast">THE MOST EXTREME GAME JAM EVER!</span></p>
+          
+          <div class="text-center footer-gifs">
+            <img src="geo-bootstrap/img/test/mailkitten.gif">
+            <img src="geo-bootstrap/img/test/spinningearth.gif">
+            <img src="geo-bootstrap/img/test/new2.gif">
+            <img src="geo-bootstrap/img/test/construction.gif">
+            <img src="geo-bootstrap/img/test/mailkitten.gif">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /container -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="geo-bootstrap/bootstrap/docs/assets/js/bootstrap.min.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html> 

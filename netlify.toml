@@ -1,0 +1,38 @@
+[build]
+  # Directory to publish (the root of the project)
+  publish = "/"
+  
+  # No build command needed for static HTML site
+  command = ""
+
+# Handle 404s with custom page
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+# Set cache control for static assets
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/audio/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/geo-bootstrap/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800" 

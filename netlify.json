@@ -1,0 +1,27 @@
+{
+  "name": "vibejam-2025-extreme",
+  "description": "VIBEJAM 2025 - EXTREME EDITION - Retro web game jam showcase site",
+  "site_id": "",
+  "build": {
+    "environment": {
+      "NODE_VERSION": "16"
+    }
+  },
+  "processing": {
+    "css": {
+      "bundle": false,
+      "minify": false
+    },
+    "js": {
+      "bundle": false,
+      "minify": false
+    },
+    "html": {
+      "pretty_urls": false
+    },
+    "images": {
+      "compress": false
+    }
+  },
+  "plugins": []
+} 

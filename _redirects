@@ -1,0 +1,10 @@
+# These rules will change if you change your site's custom domains or HTTPS settings
+
+# Redirect default Netlify subdomain to primary domain
+https://vibejam2025.netlify.app/* https://vibejam2025.example.com/:splat 301!
+
+# Handle 404 errors
+/* /index.html 404
+
+# Optional: Force HTTPS
+http://vibejam2025.example.com/* https://vibejam2025.example.com/:splat 301! 
